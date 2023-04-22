@@ -6,11 +6,14 @@
 import "./Child.css";
 
 const Child = () => {
-  return (
-    <div className="component">
-      <h3>式と文</h3>
-    </div>
-  );
+    const fn = () => 'hello';
+    const a = 1 === 1;
+    return (
+        <div className="component">
+            <h3>式と文</h3>
+            {true ? 'hello' : 'bye'}
+        </div>
+    );
 };
 
 export default Child;

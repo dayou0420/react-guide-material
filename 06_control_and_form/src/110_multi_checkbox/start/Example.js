@@ -8,9 +8,30 @@ const Example = () => {
     ]);
 
     const [sum, setSum] = useState(0);
-    const handleChange = (e) => {
 
-    }
+    const handleChange = (e) => {
+        const newFruits = fruits.map(fruit => {
+            const newFruit = {...fruit};
+
+            if (newFruit.label === e.target.value) {
+                newFruit.checked = !fruit.checked;
+            }
+
+            return newFruit;
+        })
+
+        setFruits(newFruits);
+
+        let sumVal = 0;
+        newFruits.forEach(fruit => {
+            if (fruit.checked) {
+                sumVal += fruit.value;
+            }
+        });
+
+        setSum(sumVal);
+    };
+
     return (
         <div>
             {fruits.map((fruit) => {

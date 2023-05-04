@@ -1,12 +1,14 @@
+import {ChakraBaseProvider} from "@chakra-ui/react";
 import Todo from "./components/Todo"
 
 const Example = () => {
-  return (
-    <>
-      <h2>Reminder</h2>
-      <Todo />
-    </>
-  );
+    return (
+        <>
+            <ChakraBaseProvider>
+                <Todo/>
+            </ChakraBaseProvider>
+        </>
+    );
 };
 
 export default Example;
